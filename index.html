@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Customer Invoice</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <section class="w-full h-auto bg-gray-900 flex items-center p-5 flex-col">
+      <form
+        id="myForm"
+        class="w-full h-fit bg-white rounded-2xl sm:w-3/6 md:w-3/6 lg:w-3/6 p-3"
+      >
+        <div class="flex mt-5 justify-center underline">
+          <h1
+            class="text-black pl-5 text-xl font-bold sm:text-2xl md:text-3xl lg:text-4xl"
+          >
+            BILLING SOFTWARE
+          </h1>
+        </div>
+        <div
+          class="flex justify-center mt-5 gap-5 p-3 flex-col sm:flex-col md:flex-col lg:flex-row"
+        >
+          <div class="mb-4 w-full">
+            <label for="itemName" class="block font-medium text-xl"
+              >Item Name</label
+            >
+            <input
+              id="itemName"
+              type="text"
+              placeholder="Enter item name"
+              class="w-full border rounded p-2 mt-1"
+            />
+          </div>
+          <div class="mb-4 w-full">
+            <label for="itemPrice" class="block font-medium text-xl"
+              >Item Price</label
+            >
+            <input
+              id="itemPrice"
+              type="number"
+              placeholder="Enter item price"
+              class="w-full border rounded p-2 mt-1"
+            />
+          </div>
+        </div>
+        <div
+          class="flex items-center justify-center sm:justify-center md:justify-center lg:justify-end"
+        >
+          <button
+            id="addItem"
+            class="bg-blue-500 text-white px-4 py-2 rounded-lg h-fit hover:bg-blue-600 transition"
+          >
+            Add Item
+          </button>
+        </div>
+        <div>
+          <div class="relative overflow-x-auto shadow-md sm:rounded-lg p-3">
+            <table
+              class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400"
+            >
+              <thead
+                class="text-l text-gray-700 uppercase bg-gray-100 dark:bg-gray-700 dark:text-gray-400"
+              >
+                <tr>
+                  <th scope="col" class="px-6 py-3">Item name</th>
+                  <th scope="col" class="px-6 py-3">Item price</th>
+                  <th scope="col" class="px-6 py-3">sub total(incl.Gst)</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+          <div
+            class="flex justify-between p-3 flex-col sm:flex-col md:flex-col lg:flex-row"
+          >
+            <button
+              id="viewInvoice"
+              class="bg-green-500 text-white px-4 py-2 rounded-lg h-fit hover:bg-green-600 transition" requried 
+            >
+              View Invoice
+            </button>
+            <!-- <button
+                  type="button"
+                  id="resetTotal"
+                  class="focus:outline-none text-white bg-red-700 hover:bg-red-800 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700"
+                >
+                  Reset
+                </button> -->
+            <span id="mTotal" class="font-medium text-xl"
+              >Grand Total : ₹ 0.00</span
+            >
+          </div>
+        </div>
+      </form>
+
+      <div class="w-full flex h-screen p-5 justify-center bg-gray-900">
+        <div
+          class="h-auto bg-white rounded-lg shadow-lg sm:w-full md:w-full lg:w-4/6 p-3 w-full p-3"
+          id="myDiv"
+          style="display: none;"
+        >
+          <div
+            class="w-full flex p-3 items-center h-auto justify-between flex-wrap"
+          >
+            <span class="font-bold underline text-5xl">INVOICE </span>
+
+            <img
+              class="size-28 max-w-full h-auto flex-shrink-0"
+              src="https://i.pinimg.com/280x280_RS/98/3d/67/983d67b5fd7b96d3466d8c35f8ff79f5.jpg"
+            />
+          </div>
+          <div
+            class="flex flex-col w-full gap-2 p-2 lg:flex-row md:flex-col sm:flex-col"
+          >
+            <div class="w-1/2 h-8 bg-black flex items-center sm:w-full md:w-3/6 lg:w-full">
+              <span class="text-white p-3 md:text-xl sm:text-l w-full sm:w-full"
+                >Invoice no:-<span class="w-full md:text-xl sm:text-l"
+                  ></span
+                >
+              </span>
+            </div>
+            <div class="w-1/2 h-8 bg-black sm:w-full md:w-3/6 lg:w-full">
+              <span
+                class="text-white text-2xl p-3 lg:text-2xl md:text-lg sm:text-sm w-full"
+                >Date:
+              </span>
+              <span
+                class="text-white text-2xl p-3 lg:text-2xl md:text-lg sm:text-sm w-full"
+                ></span
+              >
+            </div>
+          </div>
+          <div class="flex w-full p-2">
+            <div class="w-1/2 flex flex-col gap-2">
+              <span class="text-2xl font-bold">HARDWIN MARKET EXPRESS</span>
+              <span class=""
+                >Central Revenue Layout, No. 27, 6th Main road, Post, S R K
+                Nagar, RK Hegde Nagar.</span
+              >
+              <span class="">Bengaluru.</span>
+              <span class="">Karnataka, 560077.</span>
+              <span class="">077831 74473</span>
+              <span class="">hardwindmarket@gmail.com</span>
+            </div>
+          </div>
+          <div class="flex overflow-x-auto">
+            <table
+              class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400"
+            >
+              <thead
+                class="text-l text-gray-700 uppercase bg-gray-100 dark:bg-gray-700 dark:text-gray-400"
+              >
+                <tr>
+                  <th scope="col" class="px-6 py-3">Sn.no</th>
+                  <th scope="col" class="px-6 py-3">Item name</th>
+                  <th scope="col" class="px-6 py-3">Item price</th>
+                  <th scope="col" class="px-6 py-3">sub total(incl.Gst)</th>
+                </tr>
+              </thead>
+              <tbody class="text-black" id="invoiceDisplay"></tbody>
+            </table>
+          </div>
+
+        
+            <div class="flex  justify-end lg:justify-end md:justify-end sm:justify-end">
+              <span id="gTotal" class="font-medium text-xl mt-5"
+                >Grand Total : ₹ 0.00</span
+              >
+              
+            </div>
+            <div class="flex justify-end mt-5 lg:justify-end md:justify-end sm:justify-end">
+              <button
+                type="button"
+                id="resetBtn"
+                class="focus:outline-none text-white bg-red-700 hover:bg-red-800 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 w-44"
+              >
+                Reset
+              </button>
+            </div>
+
+           
+
+          <div class="flex items-center justify-center h-40">
+            <span class="font-bold text-gray-900 text-2xl"
+              >Thank You.Please Visit Again</span
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+  <script src="script.js"></script>
+</html>
