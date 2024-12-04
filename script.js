@@ -1,7 +1,9 @@
 let grandTotal = 0;
 let invoicegrandTotal = 0;
 let details = [];
+const myDiv = document.getElementById("myDiv");
 
+// TO view add item table
 function litsenToClick(e) {
   e.preventDefault();
   const itemName = document.getElementById("itemName").value;
@@ -37,6 +39,7 @@ function litsenToClick(e) {
 }
 document.getElementById("addItem").addEventListener("click", litsenToClick);
 
+// TO view viewInovice table data
 function viewInvoice(e) {
   e.preventDefault();
 
@@ -61,7 +64,7 @@ function viewInvoice(e) {
 }
 
 document.getElementById("viewInvoice").addEventListener("click", viewInvoice);
-
+// TO view reset All Table Data
 function resetInvoice(e) {
   e.preventDefault();
 
@@ -80,16 +83,14 @@ function resetInvoice(e) {
 
   myDiv.style.display = "none";
 }
-
 document.getElementById("resetBtn").addEventListener("click", resetInvoice);
-const myDiv = document.getElementById("myDiv");
 
+// To display bill by clickinng on viewBILL button
 function viewBill() {
   if (myDiv.style.display === "none" || myDiv.style.display === "") {
     myDiv.style.display = "block";
   } else {
     myDiv.style.display = "none";
   }
-  
 }
 document.getElementById("viewInvoice").addEventListener("click", viewBill);

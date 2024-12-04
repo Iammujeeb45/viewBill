@@ -77,7 +77,8 @@
           >
             <button
               id="viewInvoice"
-              class="bg-green-500 text-white px-4 py-2 rounded-lg h-fit hover:bg-green-600 transition" requried 
+              class="bg-green-500 text-white px-4 py-2 rounded-lg h-fit hover:bg-green-600 transition"
+              requried
             >
               View Invoice
             </button>
@@ -97,9 +98,9 @@
 
       <div class="w-full flex h-screen p-5 justify-center bg-gray-900">
         <div
-          class="h-auto bg-white rounded-lg shadow-lg sm:w-full md:w-full lg:w-4/6 p-3 w-full p-3"
+          class="h-auto bg-white rounded-lg shadow-lg sm:w-full md:w-full lg:w-4/6 p-3 w-full p-3 overflow-scroll"
           id="myDiv"
-          style="display: none;"
+          style="display: none"
         >
           <div
             class="w-full flex p-3 items-center h-auto justify-between flex-wrap"
@@ -114,11 +115,11 @@
           <div
             class="flex flex-col w-full gap-2 p-2 lg:flex-row md:flex-col sm:flex-col"
           >
-            <div class="w-1/2 h-8 bg-black flex items-center sm:w-full md:w-3/6 lg:w-full">
+            <div
+              class="w-1/2 h-8 bg-black flex items-center sm:w-full md:w-3/6 lg:w-full"
+            >
               <span class="text-white p-3 md:text-xl sm:text-l w-full sm:w-full"
-                >Invoice no:-<span class="w-full md:text-xl sm:text-l"
-                  ></span
-                >
+                >Invoice no:-<span class="w-full md:text-xl sm:text-l"></span>
               </span>
             </div>
             <div class="w-1/2 h-8 bg-black sm:w-full md:w-3/6 lg:w-full">
@@ -128,8 +129,7 @@
               </span>
               <span
                 class="text-white text-2xl p-3 lg:text-2xl md:text-lg sm:text-sm w-full"
-                ></span
-              >
+              ></span>
             </div>
           </div>
           <div class="flex w-full p-2">
@@ -163,24 +163,24 @@
             </table>
           </div>
 
-        
-            <div class="flex  justify-end lg:justify-end md:justify-end sm:justify-end">
-              <span id="gTotal" class="font-medium text-xl mt-5"
-                >Grand Total : ₹ 0.00</span
-              >
-              
-            </div>
-            <div class="flex justify-end mt-5 lg:justify-end md:justify-end sm:justify-end">
-              <button
-                type="button"
-                id="resetBtn"
-                class="focus:outline-none text-white bg-red-700 hover:bg-red-800 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 w-44"
-              >
-                Reset
-              </button>
-            </div>
-
-           
+          <div
+            class="flex justify-end lg:justify-end md:justify-end sm:justify-end"
+          >
+            <span id="gTotal" class="font-medium text-xl mt-5"
+              >Grand Total : ₹ 0.00</span
+            >
+          </div>
+          <div
+            class="flex justify-end mt-5 lg:justify-end md:justify-end sm:justify-end"
+          >
+            <button
+              type="button"
+              id="resetBtn"
+              class="focus:outline-none text-white bg-red-700 hover:bg-red-800 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 w-44"
+            >
+              Reset
+            </button>
+          </div>
 
           <div class="flex items-center justify-center h-40">
             <span class="font-bold text-gray-900 text-2xl"
